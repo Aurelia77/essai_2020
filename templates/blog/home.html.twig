@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <h1>Bienvenue</h1>
+        <h2>{{ title }}</h2>
+
+        {% if age > 18 %}
+            <p>Tu es majeur</p>
+        {% else %}
+            <p>Tu es mineur</p>
+        {% endif %}
+
+        {# (p>lorem40)*2 #}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur dolorem dolorum id iusto magni porro
+            quia voluptas voluptate voluptatem! Amet aperiam consequuntur eos, nam natus nostrum perspiciatis vero! Aperiam
+            eaque ipsam quis sit! Delectus iste maxime odit tempora? Impedit!</p>
+
+        <p>Distinctio itaque natus non quasi,
+            reprehenderit sunt. Aut earum eum magni nam quod quos rem reprehenderit rerum veniam voluptas. Aliquid cumque
+            excepturi iure iusto, nisi numquam odio optio praesentium quibusdam quis reiciendis sint ut vero vitae voluptatum!
+            Et repellat, vitae.</p>
+
+    {# Dans le BLOG #}
+        <section class="article">
+            {#(article>h2{Titre de l'article}+div.metadata{écrit le 10 janv 2020 - catégorie Ecologie}+div.content>img+(p>lorem15)*2+a.btn.btn-primary{Lire la suite...})*3#}
+            <article>
+                <h2>Titre de l'article</h2>
+                <div class="metadata">écrit le 10 janv 2020 dans la catégorie Ecologie</div>
+                <div class="content"><img src="http://placehold.it/350x150" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, mollitia voluptas. Beatae
+                        dolore inventore repudiandae!</p>
+                    <p>Aliquid architecto, corporis eligendi eos est ipsa ipsam libero molestiae nam nemo nesciunt quam,
+                        similique!</p>
+                    {# PATH : fait appel au nom d'une route #}
+                    <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite...</a></div>
+            </article>
+            <article>
+                <h2>Titre de l'article</h2>
+                <div class="metadata">écrit le 10 janv 2020 dans la catégorie Ecologie</div>
+                <div class="content"><img src="http://placehold.it/350x150" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa molestiae nemo praesentium
+                        quaerat vero?</p>
+                    <p>Deleniti eius eligendi illum minus numquam quasi, quod repudiandae similique soluta ut. Amet harum,
+                        reprehenderit!</p>
+                    <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite...</a></div>
+            </article>
+            <article>
+                <h2>Titre de l'article</h2>
+                <div class="metadata">écrit le 10 janv 2020 dans la catégorie Ecologie</div>
+                <div class="content"><img src="http://placehold.it/350x150" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur corporis ea est facilis maxime
+                        nobis?</p>
+                    <p>Architecto atque consequuntur deserunt, dolor dolore error, in libero natus nesciunt nobis vel vitae
+                        voluptate.</p>
+                    <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite...</a></div>
+            </article>
+        </section>
+
+
+        {# Dans le BLOG_SHOW #}
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata">écrit le 10 janv 2020 dans la catégorie Ecologie</div>
+            <div class="content"><img src="http://placehold.it/350x150" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, mollitia voluptas. Beatae
+                    dolore inventore repudiandae!</p>
+                <p>Aliquid architecto, corporis eligendi eos est ipsa ipsam libero molestiae nam nemo nesciunt quam,
+                    similique!</p>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus, illo ipsum iure labore
+                    maxime nemo officiis quas suscipit voluptates! Doloremque earum inventore ipsum mollitia nemo
+                    perferendis possimus repellat suscipit voluptatibus. Deserunt explicabo necessitatibus perspiciatis
+                    quo suscipit. Alias aut deserunt, eum incidunt laboriosam maiores mollitia officia porro quam,
+                    temporibus voluptatibus.</p>
+                <p>Accusamus aliquam aliquid animi aspernatur commodi consectetur corporis debitis dignissimos dolor
+                    dolore dolorem ducimus eaque eius eligendi enim et ex facilis illo in iusto labore, maiores nam
+                    nihil porro quae quaerat quam quas quasi quibusdam quidem reiciendis sapiente sed similique sunt
+                    suscipit ullam veniam? Earum facilis impedit minima minus obcaecati.</p>
+
+        </article>
+    {% endblock %}
